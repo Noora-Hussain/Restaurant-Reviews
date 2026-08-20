@@ -52,11 +52,9 @@ candidate_topics = [
 
 if st.button("Analyze"):
   if user_input.strip() != "":
-    # استخدمنا نفس اسم المتغير هنا بحرف كبير S للتوافق
     Sentiment_Pipe = load_sentiment_model(sentiment_model_choice)
     Zeroshot_Pipe = load_zeroshot_model()
 
-    # تم تصحيح اسم المتغير هنا ليطابق Sentiment_Pipe
     sent_res = Sentiment_Pipe(user_input)[0]
     topic_res = Zeroshot_Pipe(user_input, candidate_labels=candidate_topics)
 
