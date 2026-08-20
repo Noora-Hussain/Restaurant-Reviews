@@ -41,7 +41,7 @@ if st.button("Analyze"):
     if user_input.strip() != "":
 
         Sentiment_Pipe = load_sentiment_model(sentiment_model_choice)
-        Zeroshot_Pipe = load_zeroshot_mode()
+        Zeroshot_Pipe = load_zeroshot_model()
 
         sent_res = sentiment_pipe(user_input)[0]
         topic_res = zeroshot_pipe(user_input, candidate_labels=candidate_topics)
